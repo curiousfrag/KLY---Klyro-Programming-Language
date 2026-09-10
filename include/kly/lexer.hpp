@@ -2,7 +2,7 @@
 
 #include <string>
 #include <vector>
-#include "Token.hpp"
+#include "kly/token.hpp"
 
 namespace kly {
 
@@ -16,8 +16,8 @@ public:
 private: 
     std::string source_;
     std::vector<Token> tokens_;
-    size_t start_ =0;
-    size_t current =0;
+    std::size_t start_ = 0;
+    std::size_t current = 0;
     int line_ =1;
     bool isAtEnd() const;
     char advance();

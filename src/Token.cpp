@@ -1,4 +1,4 @@
-#include "Token.hpp"
+#include "kly/token.hpp"
 
 namespace kly {
     std::string tokenTypeName(TokenType type) {
