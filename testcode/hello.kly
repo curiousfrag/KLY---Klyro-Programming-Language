@@ -1,0 +1,13 @@
+let x: int = 10;
+let name: string = "KLY";
+let pi: float = 3.14;
+
+fn add(a: int, b: int) -> int {
+    return a + b;
+}
+
+if (x == 10) {
+    print("ten!");
+} else {
+    print("not ten");
+}
