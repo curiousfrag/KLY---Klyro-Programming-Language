@@ -10,8 +10,6 @@ class Lexer {
 public:
     explicit Lexer(std::string source);
 
-        // Scans the entire source and returns all tokens, ending with END_OF_FILE.
-
     std::vector<Token> scanTokens();
 private: 
     std::string source_;

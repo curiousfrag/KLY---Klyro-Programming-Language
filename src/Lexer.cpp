@@ -71,11 +71,10 @@ void Lexer::scanToken() {
     char c = advance();
 
     switch (c) {
-        // whitespace
+
         case ' ': case '\r': case '\t': break;
         case '\n': line_++; break;
 
-        // single-char tokens
         case '(': addToken(TokenType::LPAREN); break;
         case ')': addToken(TokenType::RPAREN); break;
         case '{': addToken(TokenType::LBRACE); break;
@@ -88,7 +87,6 @@ void Lexer::scanToken() {
         case '*': addToken(TokenType::STAR); break;
         case '%': addToken(TokenType::PERCENT); break;
 
-        // possibly-multi-char tokens
         case '-':
             addToken(match('>') ? TokenType::ARROW : TokenType::MINUS);
             break;
@@ -115,7 +113,7 @@ void Lexer::scanToken() {
 
         case '/':
             if (match('/')) {
-                // line comment: skip to end of line
+        
                 while (peek() != '\n' && !isAtEnd()) advance();
             } else {
                 addToken(TokenType::SLASH);
@@ -170,12 +168,11 @@ void Lexer::scanString() {
         return;
     }
 
-    advance(); // closing "
-    // strip the surrounding quotes for the lexeme value
+    advance();
     std::string value = source_.substr(start_ + 1, current - start_ - 2);
     addToken(TokenType::STRING_LITERAL, value);
 }
 
-} // namespace kly
+} 
 
 
